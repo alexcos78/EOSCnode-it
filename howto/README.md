@@ -1,4 +1,4 @@
-#Catalogue deployment
+# Catalogue deployment
 
 Resource: debian 12
 
@@ -18,7 +18,7 @@ sudo apt update
 sudo apt install -y temurin-25-jdk
 ```
 
-##Verify
+## Verify
 
 ```shell script
 $ java -version 
@@ -35,7 +35,7 @@ Default locale: en, platform encoding: UTF-8 OS
 name: "linux", version: "6.1.0-43-amd64", arch: "amd64", family: "unix"
 ```
 
-##Install/run MariaDB
+## Install/run MariaDB
 
 ```shell script
 sudo apt install mariadb-server
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS br_eoscdata_end_user_groups (
 );
 ```
 
-##Configure src/main/resources/application.properties
+## Configure src/main/resources/application.properties
 
 ```shell script
 quarkus.datasource.db-kind=mariadb
@@ -103,11 +103,11 @@ MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED" mvn compile quarkus:dev
 /v1/endusers
 ```
 
-##Swagger UI :
+## Swagger UI :
 http://IP_DEL_SERVER:8080/q/swagger-ui
 
 
-##Create vocabulary on DB
+## Create vocabulary on DB
 ```shell script
 sudo mariadb eoscnode
 
@@ -172,7 +172,7 @@ INSERT INTO eoscdata (
 );
 ```
 
-##Add tables
+## Add tables
 ```shell script
 INSERT IGNORE INTO br_eoscdata_purpose (palvelu, purpose)
 VALUES (1, 1);
